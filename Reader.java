@@ -57,7 +57,7 @@ public class Reader {
 					int hits = 0;
 					ArrayList<String> w = a.article;
 					for (String z : w) {
-						if (s.equals(z)) {
+						if (z.equals(s)) {
 							hits++;
 						} 
 					}
