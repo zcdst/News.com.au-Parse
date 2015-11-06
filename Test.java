@@ -26,7 +26,7 @@ public class Test{
 			ArrayList<String> newlist = new ArrayList<String>();
 
 			for (String s : list) {
-				if (s.equals("SOURCEEM") || s.equals("CLASSTWITTER-TWEET")) {
+				if (s.equals("GOOGLE_AD_SECTION_STARTNAMESTORY_INTRODUCTION") || s.equals("GOOGLE_AD_SECTION_ENDNAMESTORY_INTRODUCTION")) {
 				} else {
 					newlist.add(s);
 				}

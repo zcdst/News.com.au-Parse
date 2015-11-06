@@ -10,7 +10,7 @@ public class Page {
 
 	static String[] remove = {"href=", "dir=", "lang=",	// remove entire entry containing this
 	 "shockwave-flash", "http", "stylefont", "data-", "font-",
-	  "-wrap", "margin-", "-source", "twitter-tweet", "color", "text-", "nowrap", "text-",
+	  "-wrap", "margin-", "-source", "twitter-tweet", "google_ad_section", "color", "text-", "nowrap", "text-",
 	   "serif", "px"};
 
 	static String[] replace = {"&#.+;", "class=\".+?\">", "</?[pib]>?", "</?a>?",	// replace matches with empty string
