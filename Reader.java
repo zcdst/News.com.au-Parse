@@ -174,7 +174,8 @@ public class Reader {
 
 		for (Map.Entry<String,ArrayList<Integer>> x : sortedmap.entrySet()) {	// print keys and values
 			if (spread) {
-				System.out.println(x.getKey() + ": " + x.getValue().get(1) + " articles");
+				int n = x.getValue().get(1);
+				System.out.println(x.getKey() + ": " + n + " articles (" + (int) (n * 100.0 / articleDB.size()) + "%)");
 			} else {
 				System.out.println(x.getKey() + ": " + x.getValue().get(0));
 			}
