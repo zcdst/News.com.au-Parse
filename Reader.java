@@ -24,6 +24,7 @@ public class Reader {
 		int other = 0;
 
 		boolean spread = false;
+		boolean all = false;
 
 
 		try {	// load articles from file
@@ -49,6 +50,7 @@ public class Reader {
 		if (args.length > 0) {
 			if (args[0].equals("-all")) {	// ignore stop words, print everything
 				stopwords.clear();
+				all = true;
 			} else if (args[0].equals("-spread")) {	// show spread of words across articles
 				spread = true;
 			} else if (args[0].equals("-check")) {	// print links to articles for a given word
@@ -170,16 +172,22 @@ public class Reader {
 		sortedmap = new TreeMap<String,ArrayList<Integer>>(comp);
 		sortedmap.putAll(wordmap);			// sorted
 
+		int range = sortedmap.size() - 200;
+		if (all) {
+			range = 0;
+		}
 
-
+		int c = 0;
 		for (Map.Entry<String,ArrayList<Integer>> x : sortedmap.entrySet()) {	// print keys and values
-			if (spread) {
+			if (c < range) {
+				// nothing
+			} else if (spread) {
 				int n = x.getValue().get(1);
 				System.out.println(x.getKey() + ": " + n + " articles (" + (int) (n * 100.0 / articleDB.size()) + "%)");
 			} else {
 				System.out.println(x.getKey() + ": " + x.getValue().get(0));
 			}
-
+			c++;
 		}
 
 
